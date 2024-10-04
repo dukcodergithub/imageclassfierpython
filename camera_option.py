@@ -11,10 +11,10 @@ import numpy as np
 np.set_printoptions(suppress=True)
 
 # Load the model
-model = load_model("E:/san/nn/keras_model.h5", compile=False)
+model = load_model("keras_model.h5", compile=False)
 
 # Load the labels
-class_names = open("E:/san/nn/labels.txt", "r").readlines()
+class_names = [line.strip() for line in open("labels.txt", "r", encoding="utf-8").readlines()]
 
 # Create the array of the right shape to feed into the keras model
 data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
